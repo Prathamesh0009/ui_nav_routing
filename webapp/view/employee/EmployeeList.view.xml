@@ -15,7 +15,7 @@
 						title="{FirstName} {LastName}"
 						iconDensityAware="false"
 						iconInset="false"
-                        type="Navigation"
+						type="Navigation"
 						press=".onListItemPressed"/>
 				</items>
 			</List>
