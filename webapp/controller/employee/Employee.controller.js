@@ -12,21 +12,20 @@ sap.ui.define([
 
 			// Hint: we don't want to do it this way
 			/*
-			oRouter.attachRouteMatched(function (oEvent){
-				var sRouteName, oArgs, oView;
+			 oRouter.attachRouteMatched(function (oEvent){
+				 var sRouteName, oArgs, oView;
 
-				sRouteName = oEvent.getParameter("name");
-				if (sRouteName === "employee"){
-					this._onRouteMatched(oEvent);
-				}
-			}, this);
-			*/
+				 sRouteName = oEvent.getParameter("name");
+				 if (sRouteName === "employee"){
+				 	this._onRouteMatched(oEvent);
+				 }
+			 }, this);
+			 */
 
 		},
 
 		_onRouteMatched : function (oEvent) {
 			var oArgs, oView;
-
 			oArgs = oEvent.getParameter("arguments");
 			oView = this.getView();
 
@@ -50,13 +49,15 @@ sap.ui.define([
 				this.getRouter().getTargets().display("notFound");
 			}
 		},
+
 		onShowResume : function (oEvent) {
-			var oCtx = this.getView().getElementBinding().getBoundContext();
+			var oCtx = this.getView().getBindingContext();
 
 			this.getRouter().navTo("employeeResume", {
 				employeeId : oCtx.getProperty("EmployeeID")
 			});
 		}
+
 	});
 
 });
